@@ -1,8 +1,3 @@
-import org.example.greeting.Greeting
-
-group 'test'
-version '1.0-SNAPSHOT'
-
 buildscript {
     ext.kotlinVersion = '1.1.3-2'
 
@@ -15,7 +10,6 @@ buildscript {
 }
 
 apply plugin: 'kotlin'
-apply plugin: 'org.myplugin'
 
 sourceCompatibility = 1.8
 
@@ -36,21 +30,3 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
-
-task helloFranz(type: Greeting) {
-    user {
-        customName = "Franz"
-    }
-}
-
-someNames {
-    names {
-        schmidt {
-            firstName = "Marzl"
-            lastName = "Schmidt"
-            gender = "male"
-        }
-    }
-}
-
-
